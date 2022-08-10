@@ -1,6 +1,7 @@
 import { Injectable } from '@nestjs/common';
 
-
+// import json file 
+import {data} from './data'
 
 @Injectable()
 export class RestEmulatorService {
@@ -8,7 +9,6 @@ export class RestEmulatorService {
     private data = [1,2,3];
     
     getAllData(){
-
-        return this.data;
+        return data
     }
 }
