@@ -7,6 +7,7 @@ export class RestEmulatorController {
 
     @Get()
     getAllData(){
-        return this.restService.getAllData();
+        // return this.restService.getAllData();
+        return this.restService.rndChangefirstDataValues();
     }
 }
