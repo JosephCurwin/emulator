@@ -31,7 +31,7 @@ export class RestEmulatorService {
      * function changes randomlyfirst 10 values from data array property "status" from "Open" to "Closed" or vice versa
      */
        rndChangefirstDataValues(){
-        for(let i=0; i<10; i++){
+        for(let i=0; i<300; i++){
             let rndStatus = Math.floor(Math.random() * 2);
             let rndStatusValue = rndStatus == 0 ? "Open" : "Closed";
             data[i].status = rndStatusValue;
