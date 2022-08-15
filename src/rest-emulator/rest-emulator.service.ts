@@ -20,7 +20,7 @@ export class RestEmulatorService {
         let rndStatus = Math.floor(Math.random() * 2);
         let rndStatusValue = rndStatus == 0 ? "Open" : "Closed";
         data[rnd].status = rndStatusValue;
-        console.log(data[rnd].status)
+      
         return data;
 
         
@@ -36,7 +36,7 @@ export class RestEmulatorService {
             let rndStatusValue = rndStatus == 0 ? "Open" : "Closed";
             data[i].status = rndStatusValue;
         }
-        console.log(data[0].status)
+      
         return data;
 
         
