@@ -11,3 +11,7 @@ export class RestEmulatorController {
         return this.restService.rndChangefirstDataValues();
     }
 }
+//  cli command to create a new module:
+//  ng generate module rest-emulator
+
+
