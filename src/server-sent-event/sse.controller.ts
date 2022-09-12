@@ -1,20 +1,50 @@
 import { Controller, Sse } from '@nestjs/common';
 import { interval, map, Observable } from 'rxjs';
+import { SseService } from './sse.service';
 
 interface MessageEvent {
     data: string | object;
 }
 
+import { Ticket } from './sse.service';
+
 @Controller('sse')
 export class SseController {
 
+    constructor(private serverSendEventServ: SseService) {}
+
+    // @Sse('event')
+    // sendEvent(): Observable<MessageEvent> {
+    //     return interval(1000).pipe(
+    //         map((num: number)=> ({  
+    //             data: 'hello' + num
+    //         }))
+    //     )
+    // }
+
+    /* alternative */
     @Sse('event')
     sendEvent(): Observable<MessageEvent> {
-        return interval(1000).pipe(
+        return interval(5000).pipe(
             map((num: number)=> ({  
-                data: 'hello' + num
+                data: this.serverSendEventServ.getAllData()
             }))
         )
     }
 
+
+    // @Sse('datachunk')
+    // sendData(): Observable<{data: number}> {
+
+    // //    return data from servie in an intervall of 1 second
+    //     return interval(1000).pipe(
+    //         map((num: number)=> { 
+    //             return {data: 5}
+    //             // return this.serverSendEventServ.getAllData()
+               
+    //         })
+    //     )   
+    //     }
+
+     
 }
