@@ -25,9 +25,16 @@ export class SseController {
     /* alternative */
     @Sse('event')
     sendEvent(): Observable<MessageEvent> {
-        return interval(5000).pipe(
+            // return the number of current listeners for the event
+        //  
+        process.on('SSE', e => {
+            console.log(e.stack)
+        })
+        // https://stackoverflow.com/questions/9768444/possible-eventemitter-memory-leak-detected
+        return interval(40).pipe(
+
             map((num: number)=> ({  
-                data: this.serverSendEventServ.getAllData()
+                data: this.serverSendEventServ.getRndBigData() /* set which changes */
             }))
         )
     }

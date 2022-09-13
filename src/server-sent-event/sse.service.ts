@@ -19,6 +19,38 @@ export class SseService {
     getAllData(): Ticket[] {
         return mockTicketData_300
     }
+
+    
+    /* get data and change rndmly first 6 values of  */
+    
+        /* 
+        * rnd change first 6 objects of data property values on every call 
+        **/
+        getRndData(): Ticket[] {
+            let data = data10k;
+            let rnd = Math.floor(Math.random() * 6);
+            for (let i = 0; i <= 7; i++) {
+                data[i].id = Math.floor(Math.random() * 1000);
+            }
+            return data;
+        }
+
+
+        getRndBigData(): Ticket[] {
+            let data = data10k;
+            for (let i = 0; i <= 10000 ; i++) {
+                data[i].id = Math.floor(Math.random() * 1000);
+                data[i].name = "Ticket " + Math.floor(Math.random() * 1000);
+            }
+            // console.log(data) test me or other 
+            return data;
+        }
+
+
+
+
+
+
 }
 
 
