@@ -27,6 +27,12 @@ addLog(
         // 
         // check the value of the apiRoute and create a new file with the name of the apiRoute if it does not exist
         //
+        // console.log(typeof dto.log.streamOutput)
+        // console.log(dto.log.streamOutput)
+        let x = JSON.parse(dto.log.streamOutput) /* transforms string into human readable object */
+        dto.log.streamOutput = x
+        // console.log(JSON.stringify(x))
+        // console.log(JSON.parse(dto.log.streamOutput))
         fs.appendFileSync(`src/log/${dto.log.apiRoute}.json`, JSON.stringify(dto) + ',\r');
 
         // check if the file exist
