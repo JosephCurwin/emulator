@@ -40,7 +40,7 @@ export class SseService {
             let data = data10k;
             for (let i = 0; i <= 10000 ; i++) {
                 data[i].id = Math.floor(Math.random() * 1000);
-                data[i].name = "Ticket " + Math.floor(Math.random() * 1000);
+                data[i].name = "Ticket " + Math.floor(Math.random() * 10000);
             }
             // console.log(data) test me or other 
             return data;
