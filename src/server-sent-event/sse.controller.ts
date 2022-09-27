@@ -31,11 +31,7 @@ export class SseController {
             console.log(e.stack)
         })
         // https://stackoverflow.com/questions/9768444/possible-eventemitter-memory-leak-detected
-<<<<<<< HEAD
         return interval(1000).pipe(
-=======
-        return interval(300).pipe(
->>>>>>> 38afe9f4d1b67b270db0a759c7a9aea7d46199bc
 
             map((num: number)=> ({  
                 // data: this.serverSendEventServ.getRndBigData() /* set which changes */
