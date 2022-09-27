@@ -16,6 +16,9 @@ export interface Ticket {
 @Injectable()
 export class SseService {
 
+
+    
+
     getAllData(): Ticket[] {
         return mockTicketData_300
     }
@@ -46,7 +49,23 @@ export class SseService {
             return data;
         }
 
+        returnSingleTicket(): Ticket {
 
+            let data = {id: 1, name: "Ticket 1", status: "open", category: "bug", text: "text"}
+            // randomly change status from open to closed and vice versa with 50% chance
+
+            let rnd = Math.floor(Math.random() * 2);
+            if (rnd == 0) {
+                data.status = "closed"
+            } else {
+                data.status = "open"
+            }
+            return data;
+          
+
+           
+                      
+        }
 
 
 
