@@ -23,17 +23,20 @@ export class LogReceaverController {
 /* TODO create a new file with name for log file  */
 @Post()
 addLog(
-    @Body() dto: Dto) {
-        // 
+    @Body() dto: any) {
+        console.log(`receaved log is  ${dto}`)
         // check the value of the apiRoute and create a new file with the name of the apiRoute if it does not exist
-        //
-        // console.log(typeof dto.log.streamOutput)
-        // console.log(dto.log.streamOutput)
-        let x = JSON.parse(dto.log.streamOutput) /* transforms string into human readable object */
-        dto.log.streamOutput = x
-        // console.log(JSON.stringify(x))
-        // console.log(JSON.parse(dto.log.streamOutput))
-        fs.appendFileSync(`src/log/${dto.log.apiRoute}.json`, JSON.stringify(dto) + ',\r');
+        
+        // let x = JSON.parse(dto.log.streamOutput) /* transforms string into human readable object */
+        // dto.log.streamOutput = x
+        // fs.appendFileSync(`src/log/${dto.log.apiRoute}.json`, JSON.stringify(dto) + ',\r');
+
+
+        // let parsedDto = JSON.parse(dto)
+        console.log(dto)
+        fs.appendFileSync("changedObj.json",JSON.stringify(dto) + ',\r');
+
+
 
         // check if the file exist
         // if (fs.existsSync(`src/log/${dto.log.apiRoute}.json`)) {   
